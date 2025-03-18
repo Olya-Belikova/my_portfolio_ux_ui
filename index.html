@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My portfolio</title>
+    <link rel="stylesheet" href="/css/styles.css" class="stylesheet">
+</head>
+
+<body>
+    <header id="main">
+        <div class="container">
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="#">Образование</a></li>
+                    <li><a href="#">Hard skils</a></li>
+                    <li><a href="#">Soft Skils</a></li>
+                    <li><button class="btn btn-selector">+7(967)298-44-41</button></li>
+                </ul>
+                <img class="menu-btm" src="/img/menu.png" alt="menu-btm">
+            </nav>
+            <div class="main-content">
+                <h1 class="info-heading">Оля Беликова</h1>
+                <h1 class="main-heading">UX/UI-Дизайн</h1>
+                <p>Портфолио проектов и завершенных работ</p>
+            </div>
+        </div>
+    </header>
+
+    <section id="hard-skills">
+        <div class="container">
+            <div class="selector-title">
+                <h1>My portfolio</h1>
+                <div class="line"></div>
+            </div>
+            <div class="working">
+                <img src="/img/vizitka.png" alt="Image 1">
+                <img src="/img/ux.png" alt="Image 2">
+                <img src="/img/card product.png" alt="Image 3">
+            </div>
+            <div class="working">
+                <img src="/img/clian.png" alt="Image 1">
+                <img src="/img/nft.png" alt="Image 2">
+                <img src="/img/oil.png" alt="Image 3">
+            </div>
+            <div class="working">
+                <img src="/img/card.png" alt="Image 1">
+                <img src="/img/hogo.png" alt="Image 2">
+                <img src="/img/vk.png" alt="Image 3">
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h1>
+                Являюсь выпускнижей 2025 года Московского Политехнического Университета, по направлению "Информационные
+                технологии в медиаиндустрии и дизайн".
+                В 2020 году закончила Московский колледж транспорта, по направлению "Комьютерные сети".
+                Получила дополнительное профессиональное образование в сфере графического дизайна и управление
+                бизнес-процессами. В 2024 году прошла стажировку в крупной IT компании Angara Security.
+            </h1>
+            <a href="https://drive.google.com/drive/u/0/folders/1CQahex0rxCck78Yj7umqsvwv7QT7Ghbb">Дипломы и сертификаты</a>
+        </div>
+    </section>
+
+    <section id="soft-skills">
+        <div class="container">
+            <div class="selector-title">
+                <h1>Soft skills</h1>
+                <div class="line"></div>
+            </div>
+            <div class="skills-container">
+                <div class="skills">
+                    <img src="/img/Connected.svg" alt="Коммуникабельность">
+                    <h3>Коммуникабельность</h3>
+                </div>
+                <div class="skills">
+                    <img src="/img/Developer.svg" alt="Ответственность">
+                    <h3>Ответственность</h3>
+                </div>
+                <div class="skills">
+                    <img src="/img/Relaxation.svg" alt="Стресоустойчивость">
+                    <h3>Стресоустойчивость</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <ul class="footer-links">
+                <li><a href="#">Образование</a></li>
+                <li><a href="#">Hard skils</a></li>
+                <li><a href="#">Soft Skils</a></li>
+            </ul>
+            <p>© 2025 Портфолио. Беликова Ольга Юрьевна.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuBtn = document.querySelector(".menu-btm");
+            const navList = document.querySelector(".nav-list");
+
+            menuBtn.addEventListener("click", function () {
+                navList.classList.toggle("active");
+            });
+
+            // Закрытие меню при клике вне его
+            document.addEventListener("click", function (event) {
+                if (!navList.contains(event.target) && !menuBtn.contains(event.target)) {
+                    navList.classList.remove("active");
+                }
+            });
+        });
+
+        const images = document.querySelectorAll('.working img');
+
+        images.forEach(image => {
+            // При наведении (mouseover) увеличиваем изображение
+            image.addEventListener('mouseover', () => {
+                image.style.transform = 'scale(1.1)';  // Увеличиваем на 10%
+                image.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.2)';  // Добавляем тень
+            });
+
+            // При убирании курсора (mouseout) возвращаем изображение в исходное состояние
+            image.addEventListener('mouseout', () => {
+                image.style.transform = 'scale(1)';   // Возвращаем в исходный размер
+                image.style.boxShadow = 'none';       // Убираем тень
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
