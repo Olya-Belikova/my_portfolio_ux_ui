@@ -67,7 +67,7 @@ nav{
 .btn-selector{
     border: none;
     background: var(--secondary);
-    color: var(--white);
+    color: var(--white) !important;
     font-weight: bold;
 }
 
